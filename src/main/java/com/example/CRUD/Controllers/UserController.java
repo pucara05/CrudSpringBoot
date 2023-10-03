@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -22,13 +23,7 @@ public class UserController {
     }
 
 
-    /*
-    @GetMapping("/formulario")
-    public String mostrarFormulario(Model model) {
-        model.addAttribute("user", new User());
-        return "form";
-    }
-*/
+
 
 
 
@@ -55,4 +50,25 @@ public class UserController {
     public ResponseEntity<Object> eliminar(@PathVariable("userId") Long id){
          return  this.userService.deleteUser(id);
     }
+
+
+
+       /*
+    @GetMapping("/formulario")
+    public String mostrarFormulario(Model model) {
+        model.addAttribute("user", new User());
+        return "form";
+    }
+*/
+
+
+    /*
+    metodo personalidado para treaer la List y buscar todos los usuarios
+    public List<User> verUsuario(){
+
+        return  this.userService.verUser();
+
+    }
+    */
+
 }

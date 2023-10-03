@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -82,4 +83,15 @@ public  UserService(UserRepository userRepository){
                 HttpStatus.OK
         );
     }
+
+
+    public List<User> verUser(){
+    List<User> users = new ArrayList<>();
+
+    users.addAll(userRepository.findAll());
+
+    return  users;
+    }
+
+
 }
